@@ -18,7 +18,8 @@ RM = rm -rf
 SDIR := src
 ODIR := obj
 
-SOURCES := phonebook.cpp
+SOURCES := main.cpp \
+			PhoneBook.cpp \
 			
 OBJECTS := $(patsubst %.cpp,$(ODIR)/%.o,$(SOURCES))
 
