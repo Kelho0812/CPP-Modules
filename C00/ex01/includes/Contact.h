@@ -17,24 +17,35 @@
 
 class Contact
 {
-  private:
-	/* data */
   public:
-	char *FirstName;
-	char *LastName;
-	char *NickName;
-	char *DarkestSecret;
+	std::string FirstName;
+	std::string LastName;
+	std::string NickName;
+	std::string DarkestSecret;
 	int PhoneNumber;
-	Contact(/* args */);
-	~Contact();
+	bool edited;
+	Contact()
+	{
+		FirstName = "Teste";
+		LastName = "Teste";
+		NickName = "Teste";
+		DarkestSecret = "";
+		PhoneNumber = 0;
+		edited = false;
+	};
+	Contact(std::string firstname, 
+		std::string lastname, 
+		std::string nickname,
+		std::string darkestsecret, 
+		int phonenumber)
+	{
+		FirstName = firstname;
+		LastName = lastname;
+		NickName = nickname;
+		DarkestSecret = darkestsecret;
+		PhoneNumber = phonenumber;
+		edited = true;
+	};
 };
-
-Contact::Contact(/* args */)
-{
-}
-
-Contact::~Contact()
-{
-}
 
 #endif
