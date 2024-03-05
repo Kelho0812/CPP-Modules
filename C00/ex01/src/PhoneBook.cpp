@@ -29,6 +29,11 @@ void PhoneBook::print()
 	cout << "\nChoose an Index: " << endl;
 	cin >> i;
 	cout << "\n";
+	if (i < )
+	{
+		/* code */
+	}
+	
 	print_single(c_array, i);
 	cout << endl;
 }
@@ -47,10 +52,19 @@ void	print_all(Contact *c_array)
 	int i = 0;
 	while (i < 8)
 	{
+		//#TODO add IF for un-edited contacts
+		std::cout << std::setw(10);
 		cout << i;
+		std::cout << "|";
+		std::cout << std::setw(10);
 		cout << c_array[i].FirstName;
+		std::cout << "|";
+		std::cout << std::setw(10);
 		cout << c_array[i].LastName;
+		std::cout << "|";
+		std::cout << std::setw(10);
 		cout << c_array[i].NickName;
+		std::cout << "|";
 		cout << endl;
 		i++;
 	}
