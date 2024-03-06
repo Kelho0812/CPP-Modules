@@ -23,20 +23,42 @@ PhoneBook::~PhoneBook()
 
 void PhoneBook::add_contact()
 {
+	std::string input;
 	if (index >= 8)
 	{
 		index = 0;
 	}
-	cout << "First Name: \n";
-	cin >> c_array[index].FirstName;
-	cout << "Last Name: \n";
-	cin >> c_array[index].LastName;
-	cout << "NickName: \n";
+	cout << "\nFirst Name: \n";
+	cin >> input;
+	while (!valid_detail(input))
+	{
+		cout << "Names can only contain alphabetic characters. Try again. \n\n";
+		cout << "First Name: \n";
+		cin >> input;
+	}
+	c_array[index].FirstName = input;
+	cout << "\nLast Name: \n";
+	cin >> input;
+	while (!valid_detail(input))
+	{
+		cout << "Names can only contain alphabetic characters. Try again. \n\n";
+		cout << "Last Name: \n";
+		cin >> input;
+	}
+	c_array[index].LastName = input;
+	cout << "\nNickName: \n";
 	cin >> c_array[index].NickName;
-	cout << "Darkest Secret: \n";
+	cout << "\nDarkest Secret: \n";
 	cin >> c_array[index].DarkestSecret;
-	cout << "Phone Number: \n";
-	cin >> c_array[index].PhoneNumber;
+	cout << "\nPhone Number: \n";
+	cin >> input;
+	while (!isNumeric(input))
+	{
+		cout << "Numbers can only contain numeric characters. Try again. \n\n";
+		cout << "Phone Number: \n";
+		cin >> input;
+	}
+	c_array[index].PhoneNumber = atoi(input.c_str());
 	c_array[index].edited = true;
 	cout << endl;
 	index++;
@@ -49,7 +71,7 @@ void PhoneBook::print()
 	std::string input;
 	if (c_array[0].edited == false)
 	{
-		cout << RED"\nList is empty\n" RESET << endl;
+		cout << RED "\nList is empty\n" RESET << endl;
 		return ;
 	}
 	print_titles();
@@ -126,6 +148,18 @@ bool	isNumeric(const std::string &str)
 	while (it != str.end())
 	{
 		if (!std::isdigit(*it))
+			return (false);
+		++it;
+	}
+	return (true);
+}
+
+bool	valid_detail(const std::string &str)
+{
+	std::string::const_iterator it = str.begin();
+	while (it != str.end())
+	{
+		if (!std::isalpha(*it))
 			return (false);
 		++it;
 	}
