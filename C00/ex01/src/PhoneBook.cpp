@@ -27,6 +27,19 @@ void PhoneBook::add_contact()
 	{
 		index = 0;
 	}
+	cout << "First Name: \n";
+	cin >> c_array[index].FirstName;
+	cout << "Last Name: \n";
+	cin >> c_array[index].LastName;
+	cout << "NickName: \n";
+	cin >> c_array[index].NickName;
+	cout << "Darkest Secret: \n";
+	cin >> c_array[index].DarkestSecret;
+	cout << "Phone Number: \n";
+	cin >> c_array[index].PhoneNumber;
+	c_array[index].edited = true;
+	cout << endl;
+	index++;
 }
 
 void PhoneBook::print()
@@ -34,6 +47,11 @@ void PhoneBook::print()
 	int	i;
 
 	std::string input;
+	if (c_array[0].edited == false)
+	{
+		cout << RED"\nList is empty\n" RESET << endl;
+		return ;
+	}
 	print_titles();
 	print_all(c_array);
 	cout << "\nChoose an Index: " << endl;
@@ -76,7 +94,6 @@ void	print_all(Contact *c_array)
 	i = 0;
 	while (i < 8)
 	{
-		//#TODO add IF for un-edited contacts
 		std::cout << std::setw(10);
 		cout << i;
 		std::cout << "|";
@@ -105,12 +122,12 @@ void	print_single(Contact *c_array, int i)
 
 bool	isNumeric(const std::string &str)
 {
-    std::string::const_iterator it = str.begin();
-    while (it != str.end())
-    {
-        if (!std::isdigit(*it))
-            return false;
-        ++it;
-    }
-    return true;
+	std::string::const_iterator it = str.begin();
+	while (it != str.end())
+	{
+		if (!std::isdigit(*it))
+			return (false);
+		++it;
+	}
+	return (true);
 }
