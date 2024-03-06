@@ -13,7 +13,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <iomanip>      // std::setfill, std::setw
+#include <iomanip>	// std::setfill, std::setw
+#include <cctype>	// for std::isdigit
 
 using std::cin;
 using std::cout;

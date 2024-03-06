@@ -19,6 +19,7 @@
 void	print_titles(void);
 void	print_all(Contact *c_array);
 void	print_single(Contact *c_array, int i);
+bool	isNumeric(const std::string &str);
 
 class PhoneBook
 {
@@ -27,6 +28,7 @@ class PhoneBook
 	int index;
 
   public:
+	void add_contact();
 	PhoneBook();
 	~PhoneBook();
 	void print();

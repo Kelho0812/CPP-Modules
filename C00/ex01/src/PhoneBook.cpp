@@ -21,21 +21,43 @@ PhoneBook::~PhoneBook()
 {
 }
 
+void PhoneBook::add_contact()
+{
+	if (index >= 8)
+	{
+		index = 0;
+	}
+}
+
 void PhoneBook::print()
 {
-	int i;
+	int	i;
+
+	std::string input;
 	print_titles();
 	print_all(c_array);
 	cout << "\nChoose an Index: " << endl;
-	cin >> i;
+	cin >> input;
 	cout << "\n";
-	if (i < )
+	if (isNumeric(input))
 	{
-		/* code */
+		i = atoi(input.c_str());
+		if (i > 7 || i < 0 || c_array[i].edited == false)
+		{
+			cout << "Index is invalid.";
+			cout << endl;
+		}
+		else
+		{
+			print_single(c_array, i);
+			cout << endl;
+		}
 	}
-	
-	print_single(c_array, i);
-	cout << endl;
+	else
+	{
+		cout << "Index is invalid.";
+		cout << endl;
+	}
 }
 
 void	print_titles(void)
@@ -49,7 +71,9 @@ void	print_titles(void)
 
 void	print_all(Contact *c_array)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (i < 8)
 	{
 		//#TODO add IF for un-edited contacts
@@ -72,14 +96,21 @@ void	print_all(Contact *c_array)
 
 void	print_single(Contact *c_array, int i)
 {
-		cout << "First Name: " << c_array[i].FirstName << "\n";
-		cout << "Last Name: " <<  c_array[i].LastName << "\n";
-		cout << "Nickname: " << c_array[i].NickName << "\n";
-		cout << "Darkest Secret: " << c_array[i].DarkestSecret << "\n";
-		cout << "Phone Number: " << c_array[i].PhoneNumber << endl;
+	cout << "First Name: " << c_array[i].FirstName << "\n";
+	cout << "Last Name: " << c_array[i].LastName << "\n";
+	cout << "Nickname: " << c_array[i].NickName << "\n";
+	cout << "Darkest Secret: " << c_array[i].DarkestSecret << "\n";
+	cout << "Phone Number: " << c_array[i].PhoneNumber << endl;
 }
 
-// string format_output(string)
-// {
-
-// }
+bool	isNumeric(const std::string &str)
+{
+    std::string::const_iterator it = str.begin();
+    while (it != str.end())
+    {
+        if (!std::isdigit(*it))
+            return false;
+        ++it;
+    }
+    return true;
+}
