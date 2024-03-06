@@ -15,6 +15,7 @@
 #include <string>
 #include <iomanip>	// std::setfill, std::setw
 #include <cctype>	// for std::isdigit
+#include <sstream>
 
 #define RED   "\x1B[31m"
 #define GRN   "\x1B[32m"

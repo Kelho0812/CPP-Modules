@@ -23,6 +23,7 @@ bool	isNumeric(const std::string &str);
 bool	valid_detail(const std::string &str);
 std::string getValidInput(const std::string &prompt, const std::string &error,
 	bool (*isValid)(const std::string &));
+bool	isValidPhoneNumber(const string &str);
 class PhoneBook
 {
   private:
