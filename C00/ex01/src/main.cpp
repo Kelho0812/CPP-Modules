@@ -27,7 +27,7 @@ int	main(int argc, char const *argv[])
 	(void)argv;
 	while (1)
 	{
-		cout << "Input Command: " << endl;
+		cout << GRN "Input Command: " RESET << endl;
 		cin >> command;
 		execute_command(command, &phoneList);
 	}
@@ -43,5 +43,5 @@ void execute_command(std::string command, PhoneBook* phoneList)
 	else if (command == "EXIT")
 		exit(0);
 	else
-		cout << "Unknown command" << endl;
+		cout << RED "Unknown command\n" RESET << endl;
 }
