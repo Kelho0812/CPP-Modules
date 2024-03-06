@@ -95,20 +95,28 @@ void	print_all(Contact *c_array)
 	i = 0;
 	while (i < 8)
 	{
-		std::cout << std::setw(10);
-		cout << i;
-		std::cout << "|";
-		std::cout << std::setw(10);
-		cout << c_array[i].FirstName;
-		std::cout << "|";
-		std::cout << std::setw(10);
-		cout << c_array[i].LastName;
-		std::cout << "|";
-		std::cout << std::setw(10);
-		cout << c_array[i].NickName;
-		std::cout << "|";
-		cout << endl;
-		i++;
+    std::string firstName = c_array[i].FirstName;
+    std::string lastName = c_array[i].LastName;
+    std::string nickName = c_array[i].NickName;
+
+    if (firstName.size() > 10) {
+        firstName = firstName.substr(0, 9) + ".";
+    }
+
+    if (lastName.size() > 10) {
+        lastName = lastName.substr(0, 9) + ".";
+    }
+
+    if (nickName.size() > 10) {
+        nickName = nickName.substr(0, 9) + ".";
+    }
+
+    std::cout << std::setw(10) << i << "|";
+    std::cout << std::setw(10) << firstName << "|";
+    std::cout << std::setw(10) << lastName << "|";
+    std::cout << std::setw(10) << nickName << "|" << std::endl;
+
+    i++;
 	}
 }
 
