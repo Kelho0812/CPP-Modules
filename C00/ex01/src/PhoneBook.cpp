@@ -30,9 +30,9 @@ void PhoneBook::add_contact()
 		index = 0;
 	c_array[index].FirstName = getValidInput("First Name:", w_error_message, valid_detail);
 	c_array[index].LastName = getValidInput("Last Name:", w_error_message, valid_detail);
-	cout << "\nNickName: \n";
+	cout << YEL "\nNickName: \n" RESET;
 	cin >> c_array[index].NickName;
-	cout << "\nDarkest Secret: \n";
+	cout << YEL "\nDarkest Secret: \n" RESET;
 	cin.ignore(); // ignore the newline character left in the buffer by cin
     std::getline(cin, c_array[index].DarkestSecret);
 	std::string phoneNumber = getValidInput("Phone Number:", n_error_message,
@@ -149,7 +149,7 @@ string	getValidInput(const string &prompt, const string &error,
 		bool (*isValid)(const string &))
 {
 	string input;
-	cout << "\n" << prompt << "\n";
+	cout << "\n" YEL << prompt << RESET "\n";
 	cin >> input;
 	while (!isValid(input))
 	{
