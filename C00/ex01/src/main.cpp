@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/General.h"
-#include "../includes/PhoneBook.h"
-#include "../includes/Contact.h"
+#include "../includes/General.hpp"
+#include "../includes/PhoneBook.hpp"
+#include "../includes/Contact.hpp"
 
 
 void	execute_command(std::string command, PhoneBook *phoneList);
