@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/PhoneBook.h"
+#include "../includes/PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
