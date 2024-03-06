@@ -13,8 +13,8 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-# include "Contact.h"
-# include "General.h"
+# include "Contact.hpp"
+# include "General.hpp"
 
 void	print_titles(void);
 void	print_all(Contact *c_array);

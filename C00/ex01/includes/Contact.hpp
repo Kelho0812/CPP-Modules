@@ -13,7 +13,7 @@
 #ifndef CONTACT_H
 # define CONTACT_H
 
-# include "General.h"
+# include "General.hpp"
 
 class Contact
 {
