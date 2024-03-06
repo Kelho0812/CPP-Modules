@@ -37,11 +37,11 @@ int	main(int argc, char const *argv[])
 void execute_command(std::string command, PhoneBook* phoneList)
 {
 	if (command == "ADD")
-		cout << "ADD command";
+		phoneList->add_contact();
 	else if (command == "SEARCH")
 		phoneList->print();
 	else if (command == "EXIT")
 		exit(0);
 	else
-		cout << "Unknown command";
+		cout << "Unknown command" << endl;
 }
