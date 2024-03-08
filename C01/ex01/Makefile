@@ -19,8 +19,8 @@ SDIR := src
 ODIR := obj
 
 SOURCES := main.cpp \
-			Zombie.cpp \
-			newChump.cpp \
+			Zombie.class.cpp \
+			randomChump.cpp \
 			newZombie.cpp \
 			
 OBJECTS := $(patsubst %.cpp,$(ODIR)/%.o,$(SOURCES))
