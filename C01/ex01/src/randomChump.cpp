@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jorteixe  <jorteixe@student.42porto.>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/08 11:14:26 by jorteixe          #+#    #+#             */
-/*   Updated: 2024/03/08 11:14:26 by jorteixe         ###   ########.fr       */
+/*   Created: 2024/03/08 13:54:04 by jorteixe          #+#    #+#             */
+/*   Updated: 2024/03/08 13:54:04 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
+#include "../includes/Zombie.class.hpp"
 
-void	Zombie::announce(void)
+void randomChump( std::string name )
 {
-	cout << _name << ": BraiiiiiiinnnzzzZ...";
+	Zombie tonio (name);
+	tonio.announce();
 }

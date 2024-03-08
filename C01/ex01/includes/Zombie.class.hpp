@@ -39,4 +39,14 @@ class Zombie
 
   public:
 	void announce(void);
+	Zombie();
+	Zombie(string name) : _name(name){};
+	Zombie *newZombie(std::string name);
+	~Zombie()
+	{
+		cout << "Zombie " << _name << " was destroyed" << endl;
+	};
 };
+
+void	randomChump(std::string name);
+Zombie	*newZombie(std::string name);
